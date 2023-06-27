@@ -19,13 +19,23 @@ type ObjectContainerProps = {
 }
 
 // panel面板prop
-const panelPropList = ['collapsible', 'showArrow']
+const panelPropList = [
+  'collapsible',
+  'showArrow',
+  'extra',
+  'forceRender',
+  'header',
+]
 // collapse prop
 const collapsePropList = [
   'bordered',
   'destroyInactivePanel',
   'expandIconPosition',
   'ghost',
+  'defaultActiveKey',
+  'activeKey',
+  'accordion',
+  'expandIcon',
 ]
 
 const objectContainer = memo<Props & RenderFnProps & ObjectContainerProps>(

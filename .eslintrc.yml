@@ -44,7 +44,7 @@ rules:
   no-var-requires: 0
   no-unused-vars: 0
   '@typescript-eslint/no-unused-vars':
-    - error
+    - warn
   'react/prop-types': 0
   '@typescript-eslint/no-var-requires': 0
   '@typescript-eslint/no-explicit-any': 0

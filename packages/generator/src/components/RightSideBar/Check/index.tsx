@@ -47,14 +47,16 @@ const CheckConfig = (): JSX.Element => {
   )
 
   // 当前数据类型的校验配置（通用+业务）
-  const keywordsMap = useMemo(
-    () =>
+  const keywordsMap = useMemo(() => {
+    console.log('keywordsMap:typeMap: ', typeMap)
+    console.log('keywordsMap:dataSchema: ', dataSchema)
+    return (
       typeMap[dataSchema.type as keyof typeof typeMap] || {
         common: {},
         business: {},
-      },
-    [dataSchema.type]
-  )
+      }
+    )
+  }, [dataSchema.type])
   // 当前表单uiSchmea的type类型
   // const uiType = uiSchema.type as keyof typeof formItemMap
   // 当前表单是否配置需要展示的校验关键字
@@ -151,6 +153,8 @@ const CheckConfig = (): JSX.Element => {
 
   // 校验配置schema
   const unitedSchema = useMemo<UnitedSchema>(() => {
+    console.log('keywordsMap: ', keywordsMap)
+    console.log('unitedSchema -> CommonSchema: ', CommonSchema, curTypeSchema)
     return {
       showError: 'change',
       theme: 'antd',
@@ -276,6 +280,8 @@ const CheckConfig = (): JSX.Element => {
               title: '校验错误文案配置',
               fieldKey: 'errorMessage',
               ui: {
+                // 隐藏
+                style: { display: 'none' },
                 type: 'object',
                 mode: 'collapse',
                 '$:dripStyle': true,

@@ -300,9 +300,11 @@ const dripFormPluginKeywords = {
 }
 
 export default {
-  common: {
-    ...stringJsonSchema,
-    ...ajvKeywordsSchema,
-  },
-  business: dripFormPluginKeywords,
+  // common: {
+  //   ...stringJsonSchema,
+  //   ...ajvKeywordsSchema,
+  // },
+  common: {},
+  // business: dripFormPluginKeywords,
+  business: {},
 }

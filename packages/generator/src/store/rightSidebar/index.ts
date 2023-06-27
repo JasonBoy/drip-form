@@ -21,12 +21,17 @@ export const allPropertyConfigSchemaSelector = selector<
     const allPropertyConfig: Record<string, UnitedSchema['schema']> = {
       root: rootConfig,
     }
+    // "container", "antd"
+    // fields see: packages/drip-form-theme-antd/src/index.ts
     Object.values(category).map(({ fields }) => {
       Object.values(fields).map((field) => {
         const { unitedSchema } = field
         const { ui } = unitedSchema
         if (ui) {
-          allPropertyConfig[getThemeAndType(ui)] =
+          // key example: 'antd::datePicker'
+          const themeAndType = getThemeAndType(ui)
+          const showStyleSchema = ['antd::datePicker'].includes(themeAndType)
+          allPropertyConfig[themeAndType] =
             field?.propertyConfig?.schema ||
             ([
               {
@@ -65,30 +70,36 @@ export const allPropertyConfigSchemaSelector = selector<
                   },
                 },
               },
-              // 标题配置
+              // // 标题配置
               baseMap.title,
-              // 提示配置
-              baseMap.description,
-              // 布局配置
-              baseMap.layout,
+              // // 提示配置
+              // baseMap.description,
+              // // 布局配置
+              // baseMap.layout,
               // 样式配置
-              {
-                type: 'object',
-                fieldKey: 'ui',
-                ui: {
-                  type: 'object',
-                  mode: 'collapse',
-                  '$:dripStyle': true,
-                  ghost: true,
-                  containerStyle: {
-                    padding: 0,
-                    marginBottom: 5,
-                  },
-                },
-                title: '样式',
-                schema:
-                  field?.propertyConfig?.styleSchema || field?.styleSchema,
-              },
+              ...(showStyleSchema
+                ? [
+                    {
+                      type: 'object',
+                      fieldKey: 'ui',
+                      ui: {
+                        type: 'object',
+                        mode: 'collapse',
+                        '$:dripStyle': true,
+                        ghost: true,
+                        defaultActiveKey: ['ui'],
+                        containerStyle: {
+                          padding: 0,
+                          marginBottom: 5,
+                        },
+                      },
+                      title: '样式',
+                      schema:
+                        field?.propertyConfig?.styleSchema ||
+                        field?.styleSchema,
+                    },
+                  ]
+                : []),
             ] as UnitedSchema['schema'])
         }
       })

@@ -170,4 +170,8 @@ const ajvKeywords = {
 }
 // 对象业务校验关键字
 const business = {}
-export default { common: { ...common, ...ajvKeywords }, business }
+export default {
+  // common: { ...common, ...ajvKeywords },
+  common: {},
+  business,
+}

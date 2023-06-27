@@ -9,6 +9,8 @@ const unitedSchema = {
     mode: 'collapse',
     '$:dripStyle': true,
     ghost: true,
+    defaultActiveKey: ['title'],
+    // activeKey: ['title'],
     containerStyle: {
       padding: 0,
       marginBottom: 5,
@@ -26,7 +28,7 @@ const unitedSchema = {
         allowClear: true,
       },
     },
-    {
+    /*{
       fieldKey: 'showTitle',
       type: 'boolean',
       title: '是否展示标题',
@@ -167,7 +169,7 @@ const unitedSchema = {
         placeholder: '形如0 30px 20px 0 | 0 30px',
         vcontrol: 'return props.formData.title.followRootConfig == false',
       },
-    },
+    },*/
   ],
 }
 

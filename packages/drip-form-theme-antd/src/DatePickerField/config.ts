@@ -103,6 +103,15 @@ const config = {
   propertyConfig: {
     styleSchema: [
       {
+        fieldKey: 'range',
+        type: 'boolean',
+        title: '是否为范围选择器',
+        default: false,
+        ui: { type: 'switch' },
+      },
+    ],
+    /*styleSchema: [
+      {
         type: 'string',
         title: '表单模式',
         default: 'edit',
@@ -267,7 +276,7 @@ const config = {
           placeholder: 'YYYY-MM-DD HH:mm:ss',
         },
       },
-    ],
+    ],*/
   },
 }
 

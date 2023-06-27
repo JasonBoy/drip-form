@@ -88,4 +88,4 @@ const common = {
 // 数组业务校验关键字
 const business = {}
 
-export default { common, business }
+export default { common: {}, business }

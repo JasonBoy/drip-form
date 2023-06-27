@@ -50,6 +50,18 @@ export default {
   schema: [
     {
       type: 'string',
+      title: '日期选择器',
+      ui: {
+        type: 'datePicker',
+        style: {
+          width: '100%',
+        },
+        theme: 'antd',
+      },
+      fieldKey: 'text_lkXQ-xxx',
+    },
+    {
+      type: 'string',
       title: '单选',
       default: '1',
       ui: {

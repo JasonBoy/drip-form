@@ -117,6 +117,7 @@ const ajvKeywordsSchema = {
 }
 
 export default {
-  common: { ...numberDataSchema, ...ajvKeywordsSchema },
+  // common: { ...numberDataSchema, ...ajvKeywordsSchema },
+  common: {},
   business: {},
 }
