@@ -36,7 +36,12 @@ const Config = () => {
   return (
     <div className={cx(styles.container, 'rightSideBarGlobal')}>
       {!isNothingSelected() && (
-        <Tabs activeKey={activeKey} type="card" centered>
+        <Tabs
+          activeKey={activeKey}
+          type="card"
+          centered
+          onChange={(tab) => setActiveKey(tab)}
+        >
           <TabPane tab="属性配置" key={TABS.PROPERTY_TAB}>
             <PropertyConfig />
           </TabPane>

@@ -217,7 +217,7 @@ const CheckConfig = (): JSX.Element => {
             },
           ]
         : [
-            {
+            /*{
               type: 'string',
               title: '展示模式',
               fieldKey: 'viewMode',
@@ -238,7 +238,7 @@ const CheckConfig = (): JSX.Element => {
                   },
                 ],
               },
-            },
+            },*/
             {
               type: 'object',
               title: '通用校验',
@@ -248,6 +248,7 @@ const CheckConfig = (): JSX.Element => {
                 mode: 'collapse',
                 '$:dripStyle': true,
                 ghost: true,
+                defaultActiveKey: ['common'],
                 containerStyle: {
                   marginBottom: 5,
                   padding: 0,
