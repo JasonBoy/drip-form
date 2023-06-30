@@ -154,16 +154,16 @@ export default {
         style: {
           width: 120,
         },
-        queryConfig: {
-          optionsType: '1',
-          options: [
-            {
-              label: '1',
-              value: '1',
-            },
-          ],
-          setPath: 'options',
-        },
+        // queryConfig: {
+        //   optionsType: '1',
+        //   options: [
+        //     {
+        //       label: '1',
+        //       value: '1',
+        //     },
+        //   ],
+        //   setPath: 'options',
+        // },
       },
       fieldKey: 'select_RB14Wj',
     },

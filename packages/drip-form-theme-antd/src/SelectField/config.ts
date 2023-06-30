@@ -21,7 +21,7 @@ const config = {
   },
   propertyConfig: {
     styleSchema: [
-      {
+      /*{
         fieldKey: 'disabled',
         type: 'boolean',
         title: '是否禁用',
@@ -85,7 +85,7 @@ const config = {
           placeholder: '请输入默认值',
           allowClear: true,
         },
-      },
+      },*/
       ...queryCofnig,
     ],
   },

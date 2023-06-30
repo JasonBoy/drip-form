@@ -30,7 +30,9 @@ export const allPropertyConfigSchemaSelector = selector<
         if (ui) {
           // key example: 'antd::datePicker'
           const themeAndType = getThemeAndType(ui)
-          const showStyleSchema = ['antd::datePicker'].includes(themeAndType)
+          const showStyleSchema = ['antd::datePicker', 'antd::select'].includes(
+            themeAndType
+          )
           allPropertyConfig[themeAndType] =
             field?.propertyConfig?.schema ||
             ([
